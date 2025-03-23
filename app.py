@@ -1,8 +1,10 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS  # นำเข้า CORS
 from cryptography.hazmat.primitives.asymmetric import rsa, padding
 from cryptography.hazmat.primitives import serialization, hashes
 
 app = Flask(__name__)
+CORS(app)  # เปิดใช้งาน CORS สำหรับแอปทั้งหมด
 
 # ฟังก์ชันสำหรับสร้างคู่คีย์
 def generate_key_pair():
